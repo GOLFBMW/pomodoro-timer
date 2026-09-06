@@ -5,3 +5,5 @@
 ## 使い方
 
 `index.html` をブラウザで開くだけ。開始・一時停止・リセットボタンで操作する。
+
+https://golfbmw.github.io/pomodoro-timer/
