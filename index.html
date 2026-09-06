@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ポモドーロタイマー</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+    background: #1e1e2e;
+    color: #cdd6f4;
+    transition: background 0.4s ease;
+  }
+  body.break {
+    background: #1e2e24;
+  }
+  .card {
+    text-align: center;
+    padding: 3rem 4rem;
+  }
+  .phase {
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+  }
+  .time {
+    font-size: 5rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+  .controls button {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+    margin: 0 0.4rem;
+    border: none;
+    border-radius: 8px;
+    background: #89b4fa;
+    color: #1e1e2e;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .controls button:hover {
+    opacity: 0.85;
+  }
+  .controls button.secondary {
+    background: transparent;
+    border: 1px solid #6c7086;
+    color: #cdd6f4;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="phase" id="phase">作業中</div>
+    <div class="time" id="time">25:00</div>
+    <div class="controls">
+      <button id="startPause">開始</button>
+      <button id="reset" class="secondary">リセット</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
