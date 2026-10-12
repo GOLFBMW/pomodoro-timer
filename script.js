@@ -1,6 +1,3 @@
-const WORK_SECONDS = 25 * 60;
-const BREAK_SECONDS = 5 * 60;
-
 const phaseEl = document.getElementById("phase");
 const timeEl = document.getElementById("time");
 const startPauseBtn = document.getElementById("startPause");
@@ -10,12 +7,6 @@ let remaining = WORK_SECONDS;
 let isBreak = false;
 let intervalId = null;
 
-function formatTime(seconds) {
-  const m = Math.floor(seconds / 60).toString().padStart(2, "0");
-  const s = (seconds % 60).toString().padStart(2, "0");
-  return `${m}:${s}`;
-}
-
 function render() {
   timeEl.textContent = formatTime(remaining);
   phaseEl.textContent = isBreak ? "休憩中" : "作業中";
@@ -24,11 +15,7 @@ function render() {
 }
 
 function tick() {
-  remaining -= 1;
-  if (remaining < 0) {
-    isBreak = !isBreak;
-    remaining = isBreak ? BREAK_SECONDS : WORK_SECONDS;
-  }
+  ({ remaining, isBreak } = nextState({ remaining, isBreak }));
   render();
 }
 

@@ -7,3 +7,11 @@
 `index.html` をブラウザで開くだけ。開始・一時停止・リセットボタンで操作する。
 
 https://golfbmw.github.io/pomodoro-timer/
+
+## テスト
+
+ロジック（`logic.js`）の単体テストを Node 標準のテストランナーで実行する。
+
+```
+node --test tests.js
+```
